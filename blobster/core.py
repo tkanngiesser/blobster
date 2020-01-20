@@ -10,9 +10,7 @@ import azure
 from azure.storage.blob import BlockBlobService
 
 class AzureBlobStorage:
-    def __init__(self, credential_file):
-
-        account, key = self.load_credentials(credential_file)
+    def __init__(self, account, key):
 
         if account:
             self.account = account
@@ -24,13 +22,6 @@ class AzureBlobStorage:
             self.key = key
         self.is_connected = False
         self.blob_service = None
-
-# Cell
-@patch
-def load_credentials(self:AzureBlobStorage, credential_file):
-    """Load Azure Blob Storage credentials from file"""
-    credentials = pd.read_json(credential_file)
-    return list(credentials['account'].values)[0], list(credentials['key'].values)[0]
 
 # Cell
 @patch
