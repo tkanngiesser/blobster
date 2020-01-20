@@ -22,5 +22,3 @@ a connection can be established by calling the `connect`method.
 ```python
 azure_blob_storage.connect()
 ```
-
-You can find the documentation about all methods here.
