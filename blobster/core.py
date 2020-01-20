@@ -3,17 +3,8 @@
 __all__ = ['AzureBlobStorage']
 
 # Cell
-import pandas as pd
-import fastcore
-from fastcore.foundation import *
-import azure
-from azure.storage.blob import BlockBlobService
-
 class AzureBlobStorage:
-    def __init__(self, credential_file):
-
-        account, key = self.load_credentials(credential_file)
-
+    def __init__(self, account=None, key=None):
         if account:
             self.account = account
         else:
@@ -27,14 +18,9 @@ class AzureBlobStorage:
 
 # Cell
 @patch
-def load_credentials(self:AzureBlobStorage, credential_file):
-    credentials = pd.read_json(credential_file)
-    return list(credentials['account'].values)[0], list(credentials['key'].values)[0]
-
-# Cell
-@patch
 def connect(self:AzureBlobStorage):
     """Connect to Azure Blob Storage"""
+
     self.blob_service = BlockBlobService(
         account_name=self.account, account_key=self.key
     )

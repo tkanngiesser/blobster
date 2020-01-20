@@ -3,7 +3,6 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"AzureBlobStorage": "00_core.ipynb",
-         "AzureBlobStorage.load_credentials": "00_core.ipynb",
          "AzureBlobStorage.connect": "00_core.ipynb",
          "AzureBlobStorage.list_all_containers": "00_core.ipynb",
          "AzureBlobStorage.delete_container": "00_core.ipynb",
