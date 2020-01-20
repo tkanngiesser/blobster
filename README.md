@@ -2,11 +2,6 @@
 > A convenient way to manage your Azure Data Storage with Python.
 
 
-```python
-%load_ext autoreload
-%autoreload 2
-```
-
 ## Install
 
 `pip install blobster`

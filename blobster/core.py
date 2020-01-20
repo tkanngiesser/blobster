@@ -6,7 +6,6 @@ __all__ = ['AzureBlobStorage']
 import pandas as pd
 import fastcore
 from fastcore.foundation import *
-import azure
 from azure.storage.blob import BlockBlobService
 
 class AzureBlobStorage:
