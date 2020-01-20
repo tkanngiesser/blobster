@@ -28,6 +28,7 @@ class AzureBlobStorage:
 # Cell
 @patch
 def load_credentials(self:AzureBlobStorage, credential_file):
+    """Load Azure Blob Storage credentials from file"""
     credentials = pd.read_json(credential_file)
     return list(credentials['account'].values)[0], list(credentials['key'].values)[0]
 
@@ -43,13 +44,7 @@ def connect(self:AzureBlobStorage):
 # Cell
 @patch
 def list_all_containers(self:AzureBlobStorage):
-    """Return all container names from blob storage
-
-    Returns
-    -------
-    container_names: list
-        all container names in blob storage
-    """
+    """Return all container names from blob storage"""
     container_names = []
     containers = self.blob_service.list_containers()
     for container in containers:
@@ -60,17 +55,7 @@ def list_all_containers(self:AzureBlobStorage):
 # Cell
 @patch
 def delete_container(self:AzureBlobStorage, container_name):
-    """Delete specific container.
-
-    Parameters
-    ----------
-    container_name: str
-        The name of the container that shall be deleted
-
-    Returns
-    -------
-    None: NoneType
-    """
+    """Delete specified container"""
     self.blob_service.delete_container(
         container_name=container_name, fail_not_exist=False
     )
@@ -78,17 +63,7 @@ def delete_container(self:AzureBlobStorage, container_name):
 # Cell
 @patch
 def make_container(self:AzureBlobStorage, container_name):
-    """Make specific container. First check if container already exists
-
-    Parameters
-    ----------
-    container_name: str
-        The name of the container that shall be created
-
-    Returns
-    -------
-    None: NoneType
-    """
+    """Make specified container (if it does not exist)"""
     try:
         self.blob_service.list_blobs(container_name)
     except:
@@ -98,6 +73,7 @@ def make_container(self:AzureBlobStorage, container_name):
 # Cell
 @patch
 def list_all_blobs(self:AzureBlobStorage, container_name):
+    """List all blobs in a container"""
     blob_names = []
     blobs = self.blob_service.list_blobs(container_name)
     for blob in blobs:
@@ -107,23 +83,11 @@ def list_all_blobs(self:AzureBlobStorage, container_name):
 # Cell
 @patch
 def delete_blobs(self:AzureBlobStorage, container_name):
-    """Delete all blobs in specified container.
-
-    Parameters
-    ----------
-    container_name: str
-        The name of the container in which all blobs shall be deleted
-
-    Returns
-    -------
-    None: NoneType
-    """
-
+    """Delete all blobs in specified container"""
     try:
         blobs = self.blob_service.list_blobs(container_name)
     except azure.common.AzureMissingResourceHttpError:
         pass
-        # logger.warning('container not found: {}'.format(container))
     else:
         for blob in blobs:
             self.blob_service.delete_blob(container_name, blob.name)
@@ -131,18 +95,7 @@ def delete_blobs(self:AzureBlobStorage, container_name):
 # Cell
 @patch
 def delete_blob(self:AzureBlobStorage, container_name, blob_name):
-    """Delete all blobs in specified container.
-
-    Parameters
-    ----------
-    container_name: str
-        The name of the container of the blob
-    blob_name: str
-        The name of the blob that shall be deleted
-    Returns
-    -------
-    None: NoneType
-    """
+    """Delete all blobs in specified container"""
     self.blob_service.delete_blob(container_name, blob_name)
 
 # Cell
@@ -153,28 +106,14 @@ def file_to_blob(self:AzureBlobStorage, container_name, blob_name, file_name):
 # Cell
 @patch
 def folder_to_container(self:AzureBlobStorage, folder_path, container_name=None):
+    """Upload all files in a folder to a specified container"""
     files_in_folder = [f for f in listdir(folder_path) if isfile(join(folder_path, f))]
     [self.file_to_blob(container_name=container_name, blob_name=f, file_name=join(folder_path, f)) for f in files_in_folder]
-
 
 # Cell
 @patch
 def df_to_blob(self:AzureBlobStorage, container_name, blob_name, df):
-    """Write dataframe to blob
-
-    Parameters
-    ----------
-    container_name: str
-        The name of the container
-
-    blob_name: str
-        The name of the blob that shall be created
-
-    df: pandas.core.frame.DataFrame
-        The dataframe that shall be saved as blob
-
-    """
-
+    """Write Pandas dataframe to blob"""
     extension = blob_name.split(".")[-1]
     output = io.StringIO()
     if extension == "json":
@@ -189,22 +128,7 @@ def df_to_blob(self:AzureBlobStorage, container_name, blob_name, df):
 # Cell
 @patch
 def blob_to_df(self:AzureBlobStorage, container_name, blob_name):
-    """Load blob and return dataframe
-
-    Parameters
-    ----------
-    container_name: str
-        The name of the container
-
-    blob_name: str
-        The name of the blob
-
-    Returns
-    -------
-    df: pandas.core.frame.DataFrame
-        The Dataframe containing data of the blob
-    """
-
+    """Load blob and return Pandas dataframe"""
     extension = blob_name.split(".")[-1]
 
     with io.BytesIO() as input_stream:
@@ -227,19 +151,7 @@ def blob_to_df(self:AzureBlobStorage, container_name, blob_name):
 # Cell
 @patch
 def blobs_to_df(self:AzureBlobStorage, container_name):
-    """Load blobs and write to dataframe
-
-    Parameters
-    ----------
-    container_name: str
-        The name of the container
-
-    Returns
-    -------
-    df: pandas.core.frame.DataFrame
-        The Dataframe containing data of the blobs
-    """
-
+    """Load blobs and write to Pandas dataframe"""
     dfs = []
     generator = self.blob_service.list_blobs(container_name)
     for blob in generator:
@@ -250,20 +162,7 @@ def blobs_to_df(self:AzureBlobStorage, container_name):
 # Cell
 @patch
 def copy_blobs_to_other_container(self:AzureBlobStorage, source_container_name, destination_container_name, delete_after_copy=False):
-    """Copy all blobs in one container to another container
-
-    Parameters
-    ----------
-    source_container_name: str
-        The name of the source container
-
-    destination_container_name: str
-        The name of the target container
-
-    delete_after_copy: bool
-        If True, delete all blobs in source container after copy
-
-    """
+    """Copy all blobs in one container to another container"""
     generator = self.blob_service.list_blobs(source_container_name)
     for blob in generator:
         blob_url = self.blob_service.make_blob_url(source_container_name, blob.name)
@@ -276,17 +175,7 @@ def copy_blobs_to_other_container(self:AzureBlobStorage, source_container_name, 
 # Cell
 @patch
 def download_blobs_from_container(self:AzureBlobStorage, container_name, destination_path):
-    """Download all blobs from container
-
-    Parameters
-    ----------
-    container_name: str
-        The name of the container
-    destination_path: str
-        The destination path
-
-    """
-
+    """Download all blobs from container"""
     generator = self.blob_service.list_blobs(container_name)
 
     path = Path(download_path)

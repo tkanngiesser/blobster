@@ -45,6 +45,13 @@ summary: "API details."
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Loading-credentials">Loading credentials<a class="anchor-link" href="#Loading-credentials">&#182;</a></h3><p>Edit the <code>blob_storage_credentials.json</code> and enter your blob storage <code>account</code> and <code>key information</code>.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
@@ -59,6 +66,7 @@ summary: "API details."
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="AzureBlobStorage.load_credentials" class="doc_header"><code>AzureBlobStorage.load_credentials</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L29" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.load_credentials</code>(<strong><code>credential_file</code></strong>)</p>
 </blockquote>
+<p>Load Azure Blob Storage credentials from file</p>
 
 </div>
 
@@ -67,13 +75,6 @@ summary: "API details."
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Loading-credentials">Loading credentials<a class="anchor-link" href="#Loading-credentials">&#182;</a></h3><p>Edit the blob_storage_credentials.json and enter your blob storage account and key information.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -88,6 +89,14 @@ summary: "API details."
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Connnect-to-Azure-Blob-Storage">Connnect to Azure Blob Storage<a class="anchor-link" href="#Connnect-to-Azure-Blob-Storage">&#182;</a></h3><p>Once the credentials have been loaded with <code>load_credentials</code> 
+a connection can be established by calling the <code>connect</code>method.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
@@ -100,7 +109,7 @@ summary: "API details."
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.connect" class="doc_header"><code>AzureBlobStorage.connect</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L35" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.connect</code>()</p>
+<h4 id="AzureBlobStorage.connect" class="doc_header"><code>AzureBlobStorage.connect</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L36" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.connect</code>()</p>
 </blockquote>
 <p>Connect to Azure Blob Storage</p>
 
@@ -111,14 +120,6 @@ summary: "API details."
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Connnect-to-Azure-Blob-Storage">Connnect to Azure Blob Storage<a class="anchor-link" href="#Connnect-to-Azure-Blob-Storage">&#182;</a></h3><p>Once the credentials have been loaded with <code>load_credentials</code> 
-a connection can be established by calling the <code>connect</code>method.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -133,6 +134,12 @@ a connection can be established by calling the <code>connect</code>method.</p>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="List-all-containers-in-the-Blob-Storage">List all containers in the Blob Storage<a class="anchor-link" href="#List-all-containers-in-the-Blob-Storage">&#182;</a></h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
@@ -145,11 +152,9 @@ a connection can be established by calling the <code>connect</code>method.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.list_all_containers" class="doc_header"><code>AzureBlobStorage.list_all_containers</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L44" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.list_all_containers</code>()</p>
+<h4 id="AzureBlobStorage.list_all_containers" class="doc_header"><code>AzureBlobStorage.list_all_containers</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L45" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.list_all_containers</code>()</p>
 </blockquote>
 <p>Return all container names from blob storage</p>
-<h2 id="Returns">Returns<a class="anchor-link" href="#Returns">&#182;</a></h2><p>container_names: list
-    all container names in blob storage</p>
 
 </div>
 
@@ -171,12 +176,9 @@ a connection can be established by calling the <code>connect</code>method.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.delete_container" class="doc_header"><code>AzureBlobStorage.delete_container</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L61" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.delete_container</code>(<strong><code>container_name</code></strong>)</p>
+<h4 id="AzureBlobStorage.delete_container" class="doc_header"><code>AzureBlobStorage.delete_container</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L56" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.delete_container</code>(<strong><code>container_name</code></strong>)</p>
 </blockquote>
-<p>Delete specific container.</p>
-<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">&#182;</a></h2><p>container_name: str
-    The name of the container that shall be deleted</p>
-<h2 id="Returns">Returns<a class="anchor-link" href="#Returns">&#182;</a></h2><p>None: NoneType</p>
+<p>Delete specified container</p>
 
 </div>
 
@@ -198,12 +200,9 @@ a connection can be established by calling the <code>connect</code>method.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.make_container" class="doc_header"><code>AzureBlobStorage.make_container</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L79" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.make_container</code>(<strong><code>container_name</code></strong>)</p>
+<h4 id="AzureBlobStorage.make_container" class="doc_header"><code>AzureBlobStorage.make_container</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L64" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.make_container</code>(<strong><code>container_name</code></strong>)</p>
 </blockquote>
-<p>Make specific container. First check if container already exists</p>
-<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">&#182;</a></h2><p>container_name: str
-    The name of the container that shall be created</p>
-<h2 id="Returns">Returns<a class="anchor-link" href="#Returns">&#182;</a></h2><p>None: NoneType</p>
+<p>Make specified container (if it does not exist)</p>
 
 </div>
 
@@ -225,8 +224,9 @@ a connection can be established by calling the <code>connect</code>method.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.list_all_blobs" class="doc_header"><code>AzureBlobStorage.list_all_blobs</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L99" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.list_all_blobs</code>(<strong><code>container_name</code></strong>)</p>
+<h4 id="AzureBlobStorage.list_all_blobs" class="doc_header"><code>AzureBlobStorage.list_all_blobs</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L74" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.list_all_blobs</code>(<strong><code>container_name</code></strong>)</p>
 </blockquote>
+<p>List all blobs in a container</p>
 
 </div>
 
@@ -248,12 +248,9 @@ a connection can be established by calling the <code>connect</code>method.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.delete_blobs" class="doc_header"><code>AzureBlobStorage.delete_blobs</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L108" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.delete_blobs</code>(<strong><code>container_name</code></strong>)</p>
+<h4 id="AzureBlobStorage.delete_blobs" class="doc_header"><code>AzureBlobStorage.delete_blobs</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L84" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.delete_blobs</code>(<strong><code>container_name</code></strong>)</p>
 </blockquote>
-<p>Delete all blobs in specified container.</p>
-<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">&#182;</a></h2><p>container_name: str
-    The name of the container in which all blobs shall be deleted</p>
-<h2 id="Returns">Returns<a class="anchor-link" href="#Returns">&#182;</a></h2><p>None: NoneType</p>
+<p>Delete all blobs in specified container</p>
 
 </div>
 
@@ -275,14 +272,9 @@ a connection can be established by calling the <code>connect</code>method.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.delete_blob" class="doc_header"><code>AzureBlobStorage.delete_blob</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L132" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.delete_blob</code>(<strong><code>container_name</code></strong>, <strong><code>blob_name</code></strong>)</p>
+<h4 id="AzureBlobStorage.delete_blob" class="doc_header"><code>AzureBlobStorage.delete_blob</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.delete_blob</code>(<strong><code>container_name</code></strong>, <strong><code>blob_name</code></strong>)</p>
 </blockquote>
-<p>Delete all blobs in specified container.</p>
-<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">&#182;</a></h2><p>container_name: str
-    The name of the container of the blob
-blob_name: str
-    The name of the blob that shall be deleted</p>
-<h2 id="Returns">Returns<a class="anchor-link" href="#Returns">&#182;</a></h2><p>None: NoneType</p>
+<p>Delete all blobs in specified container</p>
 
 </div>
 
@@ -304,7 +296,7 @@ blob_name: str
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.file_to_blob" class="doc_header"><code>AzureBlobStorage.file_to_blob</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L149" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.file_to_blob</code>(<strong><code>container_name</code></strong>, <strong><code>blob_name</code></strong>, <strong><code>file_name</code></strong>)</p>
+<h4 id="AzureBlobStorage.file_to_blob" class="doc_header"><code>AzureBlobStorage.file_to_blob</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L102" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.file_to_blob</code>(<strong><code>container_name</code></strong>, <strong><code>blob_name</code></strong>, <strong><code>file_name</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -327,8 +319,9 @@ blob_name: str
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.folder_to_container" class="doc_header"><code>AzureBlobStorage.folder_to_container</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L154" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.folder_to_container</code>(<strong><code>folder_path</code></strong>, <strong><code>container_name</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="AzureBlobStorage.folder_to_container" class="doc_header"><code>AzureBlobStorage.folder_to_container</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L107" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.folder_to_container</code>(<strong><code>folder_path</code></strong>, <strong><code>container_name</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
+<p>Upload all files in a folder to a specified container</p>
 
 </div>
 
@@ -350,15 +343,9 @@ blob_name: str
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.df_to_blob" class="doc_header"><code>AzureBlobStorage.df_to_blob</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L161" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.df_to_blob</code>(<strong><code>container_name</code></strong>, <strong><code>blob_name</code></strong>, <strong><code>df</code></strong>)</p>
+<h4 id="AzureBlobStorage.df_to_blob" class="doc_header"><code>AzureBlobStorage.df_to_blob</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L114" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.df_to_blob</code>(<strong><code>container_name</code></strong>, <strong><code>blob_name</code></strong>, <strong><code>df</code></strong>)</p>
 </blockquote>
-<p>Write dataframe to blob</p>
-<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">&#182;</a></h2><p>container_name: str
-    The name of the container</p>
-<p>blob_name: str
-    The name of the blob that shall be created</p>
-<p>df: pandas.core.frame.DataFrame
-    The dataframe that shall be saved as blob</p>
+<p>Write Pandas dataframe to blob</p>
 
 </div>
 
@@ -380,15 +367,9 @@ blob_name: str
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.blob_to_df" class="doc_header"><code>AzureBlobStorage.blob_to_df</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L190" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.blob_to_df</code>(<strong><code>container_name</code></strong>, <strong><code>blob_name</code></strong>)</p>
+<h4 id="AzureBlobStorage.blob_to_df" class="doc_header"><code>AzureBlobStorage.blob_to_df</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L129" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.blob_to_df</code>(<strong><code>container_name</code></strong>, <strong><code>blob_name</code></strong>)</p>
 </blockquote>
-<p>Load blob and return dataframe</p>
-<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">&#182;</a></h2><p>container_name: str
-    The name of the container</p>
-<p>blob_name: str
-    The name of the blob</p>
-<h2 id="Returns">Returns<a class="anchor-link" href="#Returns">&#182;</a></h2><p>df: pandas.core.frame.DataFrame
-    The Dataframe containing data of the blob</p>
+<p>Load blob and return Pandas dataframe</p>
 
 </div>
 
@@ -410,13 +391,9 @@ blob_name: str
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.blobs_to_df" class="doc_header"><code>AzureBlobStorage.blobs_to_df</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L228" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.blobs_to_df</code>(<strong><code>container_name</code></strong>)</p>
+<h4 id="AzureBlobStorage.blobs_to_df" class="doc_header"><code>AzureBlobStorage.blobs_to_df</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L152" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.blobs_to_df</code>(<strong><code>container_name</code></strong>)</p>
 </blockquote>
-<p>Load blobs and write to dataframe</p>
-<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">&#182;</a></h2><p>container_name: str
-    The name of the container</p>
-<h2 id="Returns">Returns<a class="anchor-link" href="#Returns">&#182;</a></h2><p>df: pandas.core.frame.DataFrame
-    The Dataframe containing data of the blobs</p>
+<p>Load blobs and write to Pandas dataframe</p>
 
 </div>
 
@@ -438,15 +415,9 @@ blob_name: str
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.copy_blobs_to_other_container" class="doc_header"><code>AzureBlobStorage.copy_blobs_to_other_container</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L251" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.copy_blobs_to_other_container</code>(<strong><code>source_container_name</code></strong>, <strong><code>destination_container_name</code></strong>, <strong><code>delete_after_copy</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="AzureBlobStorage.copy_blobs_to_other_container" class="doc_header"><code>AzureBlobStorage.copy_blobs_to_other_container</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L163" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.copy_blobs_to_other_container</code>(<strong><code>source_container_name</code></strong>, <strong><code>destination_container_name</code></strong>, <strong><code>delete_after_copy</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Copy all blobs in one container to another container</p>
-<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">&#182;</a></h2><p>source_container_name: str
-    The name of the source container</p>
-<p>destination_container_name: str
-    The name of the target container</p>
-<p>delete_after_copy: bool
-    If True, delete all blobs in source container after copy</p>
 
 </div>
 
@@ -468,13 +439,9 @@ blob_name: str
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="AzureBlobStorage.download_blobs_from_container" class="doc_header"><code>AzureBlobStorage.download_blobs_from_container</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L277" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.download_blobs_from_container</code>(<strong><code>container_name</code></strong>, <strong><code>destination_path</code></strong>)</p>
+<h4 id="AzureBlobStorage.download_blobs_from_container" class="doc_header"><code>AzureBlobStorage.download_blobs_from_container</code><a href="https://github.com/tkanngiesser/blobster/tree/master/blobster/core.py#L176" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>AzureBlobStorage.download_blobs_from_container</code>(<strong><code>container_name</code></strong>, <strong><code>destination_path</code></strong>)</p>
 </blockquote>
 <p>Download all blobs from container</p>
-<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">&#182;</a></h2><p>container_name: str
-    The name of the container
-destination_path: str
-    The destination path</p>
 
 </div>
 
