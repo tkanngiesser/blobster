@@ -1,6 +1,6 @@
 ---
 
-title: Blobster
+title: Blobster 🦞
 
 keywords: fastai
 sidebar: home_sidebar
@@ -43,8 +43,14 @@ summary: "A convenient way to manage your Azure Data Storage with Python."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Loading-credentials">Loading credentials<a class="anchor-link" href="#Loading-credentials">&#182;</a></h3><p>Edit the <code>blob_storage_credentials.json</code> and enter your blob storage <code>account</code> and <code>key</code> information.</p>
+<h3 id="Import">Import<a class="anchor-link" href="#Import">&#182;</a></h3><p><code>from blobster import *</code></p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Loading-credentials">Loading credentials<a class="anchor-link" href="#Loading-credentials">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -53,7 +59,7 @@ summary: "A convenient way to manage your Azure Data Storage with Python."
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">azure_blob_storage</span> <span class="o">=</span> <span class="n">AzureBlobStorage</span><span class="p">(</span><span class="n">credential_file</span><span class="o">=</span><span class="s1">&#39;blob_storage_credentials.json&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">azure_blob_storage</span> <span class="o">=</span> <span class="n">AzureBlobStorage</span><span class="p">(</span><span class="n">account</span><span class="o">=</span><span class="s1">&#39;your_account_string&#39;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;your_key_string&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -63,9 +69,7 @@ summary: "A convenient way to manage your Azure Data Storage with Python."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Connnect-to-Azure-Blob-Storage">Connnect to Azure Blob Storage<a class="anchor-link" href="#Connnect-to-Azure-Blob-Storage">&#182;</a></h3><p>Once the credentials have been loaded with <code>load_credentials</code> 
-a connection can be established by calling the <code>connect</code>method.</p>
-
+<h3 id="Connnect-to-Azure-Blob-Storage">Connnect to Azure Blob Storage<a class="anchor-link" href="#Connnect-to-Azure-Blob-Storage">&#182;</a></h3>
 </div>
 </div>
 </div>
