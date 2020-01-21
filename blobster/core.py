@@ -3,6 +3,7 @@
 __all__ = ['AzureBlobStorage']
 
 # Cell
+import io
 import pandas as pd
 import fastcore
 from fastcore.foundation import *
