@@ -13,12 +13,8 @@
 
 ### Loading credentials
 
-```python
-azure_blob_storage = AzureBlobStorage(account='your_account_string', key='your_key_string')
-```
+`python azure_blob_storage = AzureBlobStorage(account='your_account_string', key='your_key_string')`
 
 ### Connnect to Azure Blob Storage
 
-```python
-azure_blob_storage.connect()
-```
+`python azure_blob_storage.connect()`
