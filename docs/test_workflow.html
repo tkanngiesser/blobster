@@ -67,7 +67,8 @@ summary: "summary"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">azure_bl</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">azure_blob_storage</span> <span class="o">=</span> <span class="n">AzureBlobStorage</span><span class="p">(</span><span class="n">account</span><span class="o">=</span><span class="s1">&#39;vfudevblobstorage&#39;</span><span class="p">,</span>
+                                      <span class="n">key</span><span class="o">=</span><span class="s1">&#39;eEbmjhexKPoGy+e8B2aUiDBPIG0qRThKRenJLgVbGN2TlcwMty9NopeUmwzIQ67DpYvcr8AwgPjobAiT0Zmzkw==&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -119,6 +120,21 @@ summary: "summary"
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/tino/opt/anaconda3/envs/blobster/lib/python3.7/site-packages/pandas_flavor/register.py:31: UserWarning: registration of accessor &lt;class &#39;pandas_flavor.register.register_dataframe_method.&lt;locals&gt;.inner.&lt;locals&gt;.AccessorMethod&#39;&gt; under name &#39;step_consolidate_item_learning_levels&#39; for type &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt; is overriding a preexisting attribute with the same name.
+  register_dataframe_accessor(method.__name__)(AccessorMethod)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -157,6 +173,21 @@ summary: "summary"
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/tino/opt/anaconda3/envs/blobster/lib/python3.7/site-packages/pandas_flavor/register.py:31: UserWarning: registration of accessor &lt;class &#39;pandas_flavor.register.register_dataframe_method.&lt;locals&gt;.inner.&lt;locals&gt;.AccessorMethod&#39;&gt; under name &#39;step_load_vfu_entity_definition&#39; for type &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt; is overriding a preexisting attribute with the same name.
+  register_dataframe_accessor(method.__name__)(AccessorMethod)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -179,7 +210,7 @@ summary: "summary"
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-11-ea479d085d1e&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-19-ea479d085d1e&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>items_raw <span class="ansi-blue-fg">=</span> pd<span class="ansi-blue-fg">.</span>DataFrame<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>step_load_vfu_entity_definition<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
 <span class="ansi-green-fg">~/opt/anaconda3/envs/blobster/lib/python3.7/site-packages/pandas_flavor/register.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
@@ -189,14 +220,21 @@ summary: "summary"
 <span class="ansi-green-intense-fg ansi-bold">     30</span> 
 <span class="ansi-green-intense-fg ansi-bold">     31</span>         register_dataframe_accessor<span class="ansi-blue-fg">(</span>method<span class="ansi-blue-fg">.</span>__name__<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">(</span>AccessorMethod<span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-9-104e8f86ea25&gt;</span> in <span class="ansi-cyan-fg">step_load_vfu_entity_definition</span><span class="ansi-blue-fg">(df, all_entities)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">def</span> step_load_vfu_entity_definition<span class="ansi-blue-fg">(</span>df<span class="ansi-blue-fg">,</span> all_entities<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-blue-fg">&#34;&#34;&#34;loads data definition of entity&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     datapipe.definition = azure_blob_storage.blob_to_df(
-</span><span class="ansi-green-intense-fg ansi-bold">      6</span>         container_name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">f&#34;{datapipe.service}-data-definitions&#34;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span>         blob_name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">f&#34;{datapipe.service}-data-definition.xlsx&#34;</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">&lt;ipython-input-18-104e8f86ea25&gt;</span> in <span class="ansi-cyan-fg">step_load_vfu_entity_definition</span><span class="ansi-blue-fg">(df, all_entities)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     datapipe.definition = azure_blob_storage.blob_to_df(
+<span class="ansi-green-intense-fg ansi-bold">      6</span>         container_name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">f&#34;{datapipe.service}-data-definitions&#34;</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg">         </span>blob_name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">f&#34;{datapipe.service}-data-definition.xlsx&#34;</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span>     )
+<span class="ansi-green-intense-fg ansi-bold">      9</span>     <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> all_entities<span class="ansi-blue-fg">:</span>
 
-<span class="ansi-red-fg">NameError</span>: name &#39;azure_blob_storage&#39; is not defined</pre>
+<span class="ansi-green-fg">~/Repos/blobster/blobster/core.py</span> in <span class="ansi-cyan-fg">blob_to_df</span><span class="ansi-blue-fg">(self, container_name, blob_name)</span>
+<span class="ansi-green-intense-fg ansi-bold">    122</span>     extension <span class="ansi-blue-fg">=</span> blob_name<span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;.&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span>
+<span class="ansi-green-intense-fg ansi-bold">    123</span> 
+<span class="ansi-green-fg">--&gt; 124</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">with</span> io<span class="ansi-blue-fg">.</span>BytesIO<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> input_stream<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    125</span>         self.blob_service.get_blob_to_stream(
+<span class="ansi-green-intense-fg ansi-bold">    126</span>             container_name<span class="ansi-blue-fg">=</span>container_name<span class="ansi-blue-fg">,</span> blob_name<span class="ansi-blue-fg">=</span>blob_name<span class="ansi-blue-fg">,</span> stream<span class="ansi-blue-fg">=</span>input_stream
+
+<span class="ansi-red-fg">NameError</span>: name &#39;io&#39; is not defined</pre>
 </div>
 </div>
 
